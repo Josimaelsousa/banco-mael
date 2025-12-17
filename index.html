@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Banco Estudo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+
+    <!-- TELA LOGIN -->
+    <div id="tela-login">
+      <h1>Banco Mael</h1>
+      <input type="text" id="usuario" placeholder="Usuário">
+      <input type="password" id="senha" placeholder="Senha">
+      <button onclick="login()">Entrar</button>
+    </div>
+
+    <!-- TELA CONTA -->
+    <div id="tela-conta" style="display: none;">
+      <h1>Banco Mael</h1>      
+      <p>Saldo: <span id="saldo"></span></p>
+
+      <input type="number" id="valor" placeholder="Digite um valor">
+      <button class="btn" onclick="depositar()">Depositar</button>
+      <button class="btn" onclick="sacar()">Sacar</button>
+
+      <button onclick="abrirHistorico()">Ver histórico de transações</button>
+      <button class="btn" onclick="abrirPix()">PIX</button>
+      <button onclick="sair()">Sair</button>
+    </div>
+
+    <!-- TELA HISTÓRICO -->
+    <div id="tela-historico" style="display: none;">
+      <h1>Histórico de transações</h1>
+      <ul id="historico"></ul>
+      <button onclick="voltarConta()">Voltar</button>
+    </div>
+
+    <!-- TELA PIX -->
+    <div id="tela-pix" style="display: none;">
+      <h1>PIX</h1>
+      <input type="number" id="valorPix" placeholder="Valor do PIX">
+      <button class="btn" onclick="depositarPix()">Receber PIX</button>
+      <button class="btn" onclick="enviarPix()">Enviar PIX</button>
+      <button onclick="voltarConta()">Voltar</button>
+    </div>
+
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

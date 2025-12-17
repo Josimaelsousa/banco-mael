@@ -1,0 +1,89 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #e6f0ff, #f2f2f2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background: #fff;
+  padding: 24px;
+  width: 90%;        /* se adapta à largura da tela */
+  max-width: 340px;  /* não ultrapassa 340px em telas grandes */
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  text-align: center;
+}
+
+/* Títulos */
+h1 {
+  color: #0a7cff;
+  margin-bottom: 15px;
+}
+
+/* Inputs */
+input {
+  padding: 10px;
+  width: 80%;        /* se ajusta melhor em telas pequenas */
+  max-width: 250px;  /* não fica gigante em telas grandes */
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #0a7cff;
+}
+
+/* Botões padrão */
+button {
+  padding: 10px 14px;
+  margin: 6px 0;
+  border: none;
+  border-radius: 6px;
+  background: #0a7cff;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s, transform 0.1s;
+}
+
+button:hover {
+  background: #055ec4;
+  transform: translateY(-1px);
+}
+
+/* Botões principais (Depositar / Sacar / PIX) */
+.btn {
+  width: 80%;        /* se ajusta em telas pequenas */
+  max-width: 250px;  /* não fica gigante em telas grandes */
+  font-size: 13px;
+  margin: 8px auto;  /* centraliza horizontalmente e dá espaçamento vertical */
+  display: block;   
+}
+
+/* Histórico */
+ul {
+  text-align: left;
+  max-height: 150px;
+  overflow-y: auto;
+  padding-left: 18px;
+}
+
+ul li {
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+/* Input do valor centralizado */
+#valor, #valorPix {
+  width: 80%;        /* se ajusta à tela do celular */
+  max-width: 250px;
+  margin: 0 auto 12px auto;
+  display: block;
+}
