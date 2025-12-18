@@ -1,17 +1,14 @@
 let saldo = 1000;
 let historico = [];
 
-/* ===== FORMATAÇÃO EM REAL ===== */
-function formatarReal(valor) {
-  return valor.toLocaleString("pt-BR", {
-    style: "currency",
-    currency: "BRL"
-  });
+/* ===== FORMATAÇÃO MAELCOIN ===== */
+function formatarMaelCoin(valor) {
+  return `M$ ${valor.toFixed(2)}`;
 }
 
 /* ===== ATUALIZAÇÕES ===== */
 function atualizarSaldo() {
-  document.getElementById("saldo").innerText = formatarReal(saldo);
+  document.getElementById("saldo").innerText = formatarMaelCoin(saldo);
 }
 
 function atualizarHistorico() {
@@ -30,7 +27,7 @@ function depositar() {
   let valor = Number(document.getElementById("valor").value);
   if (valor > 0) {
     saldo += valor;
-    historico.push(`Depósito: ${formatarReal(valor)}`);
+    historico.push(`Depósito: ${formatarMaelCoin(valor)}`);
     atualizarSaldo();
     salvarDados();
     document.getElementById("valor").value = "";
@@ -43,7 +40,7 @@ function sacar() {
   let valor = Number(document.getElementById("valor").value);
   if (valor > 0 && valor <= saldo) {
     saldo -= valor;
-    historico.push(`Saque: ${formatarReal(valor)}`);
+    historico.push(`Saque: ${formatarMaelCoin(valor)}`);
     atualizarSaldo();
     salvarDados();
     document.getElementById("valor").value = "";
@@ -80,7 +77,7 @@ if (historicoSalvo !== null) historico = JSON.parse(historicoSalvo);
 atualizarSaldo();
 atualizarHistorico();
 
-/* ===== PIX ===== */
+/* ===== PIX (FICTÍCIO) ===== */
 function abrirPix() {
   document.getElementById("tela-conta").style.display = "none";
   document.getElementById("tela-historico").style.display = "none";
@@ -91,7 +88,7 @@ function enviarPix() {
   let valor = Number(document.getElementById("valorPix").value);
   if (valor > 0 && valor <= saldo) {
     saldo -= valor;
-    historico.push(`PIX enviado: ${formatarReal(valor)}`);
+    historico.push(`PIX enviado: ${formatarMaelCoin(valor)}`);
     atualizarSaldo();
     salvarDados();
     document.getElementById("valorPix").value = "";
@@ -105,7 +102,7 @@ function depositarPix() {
   let valor = Number(document.getElementById("valorPix").value);
   if (valor > 0) {
     saldo += valor;
-    historico.push(`PIX recebido: ${formatarReal(valor)}`);
+    historico.push(`PIX recebido: ${formatarMaelCoin(valor)}`);
     atualizarSaldo();
     salvarDados();
     document.getElementById("valorPix").value = "";
